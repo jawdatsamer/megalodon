@@ -1,7 +1,7 @@
 ##########################################################################################################################
 #                                                                                                                        #
 # These some information about these tool :-                                                                             #
-# Tool name : The kraken                                                                                                 #
+# Tool name : Megalodon                                                                                                  #
 # Author : Jawdat Samer                                                                                                  #
 # Email : jawdat.samer@protonmail.com                                                                                    #
 # License with GNU GPLv3 or any later version of these license                                                           #
@@ -22,6 +22,7 @@ from src import usersandgroupconf
 from src import servicesmanagement
 from src import managepackages
 from src import backuptool
+import random
 
 #Report function start here
 #This part of the code is used to display a simplified report about the system status of the person who executes the program
@@ -126,7 +127,7 @@ what do want to do, please choose from the list :
 1) Show all services status
 2) Show all running services
 3) Show service status
-4) Services resources monitor
+4) monitor services by their resource usage
 5) Start a service
 6) Stop a service
 7) Restart a service
@@ -275,35 +276,61 @@ What do you want to do today , please choose from the list :
 #This part of the code is used to execute the appropriate functions for the user when starting the program
 
 os.system("clear")
-print("""
-                                        ██████████                    
-                                      ██░░░░░░░░░░██                  
-                                    ▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓                
-                                  ▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓              
-                                  ██░░▒▒██▒▒▒▒▒▒██▒▒▒▒██              
-                                  ██░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██              
-                        ██████    ██░░▒▒▒▒▒▒██▒▒▒▒▒▒▒▒██    ██████    
-                      ██████▒▒▓▓    ▓▓▒▒▒▒██▓▓██▒▒▒▒██    ▓▓▒▒████▓▓  
-                    ██      ██░░██    ██▒▒▒▒██░░▒▒██    ██░░██      ██
-                    ██      ██▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒████▒▒▒▒██      ██
-                      ██      ██▒▒▒▒▒▒▒▒██▒▒▒▒▒▒██▒▒▒▒▒▒▒▒██      ██  
-                                ██▒▒████▒▒▒▒▒▒▒▒▒▒████▒▒██            
-                        ██████    ██░░▒▒██▒▒██▒▒██▒▒▒▒██    ██████    
-                      ██████▒▒████▒▒▒▒██▒▒▒▒██▒▒▒▒██▒▒▒▒████▒▒██████  
-                    ██      ██▒▒▒▒▒▒██▒▒▒▒██  ██▒▒▒▒██▒▒▒▒▒▒██      ██
-                    ██        ██████▒▒████      ████▒▒██████        ██
-                      ██          ████              ████          ██  
-                                ████                  ████            
-                                ██                      ██            
-                                ██    ██          ██    ██            
-                                  ▓▓▓▓              ▓▓▓▓              
-            [#] The Kraken v1.0
 
-                    
-                  " It's time to think more and write less with The Kraken "
+for x in range(1):
+    screen = random.randint(1,2)
+    if screen == 1 :
+        print("""           
+                 ███▄ ▄███▓▓█████   ▄████  ▄▄▄       ██▓     ▒█████  ▓█████▄  ▒█████   ███▄    █ 
+                ▓██▒▀█▀ ██▒▓█   ▀  ██▒ ▀█▒▒████▄    ▓██▒    ▒██▒  ██▒▒██▀ ██▌▒██▒  ██▒ ██ ▀█   █ 
+                ▓██    ▓██░▒███   ▒██░▄▄▄░▒██  ▀█▄  ▒██░    ▒██░  ██▒░██   █▌▒██░  ██▒▓██  ▀█ ██▒
+                ▒██    ▒██ ▒▓█  ▄ ░▓█  ██▓░██▄▄▄▄██ ▒██░    ▒██   ██░░▓█▄   ▌▒██   ██░▓██▒  ▐▌██▒
+                ▒██▒   ░██▒░▒████▒░▒▓███▀▒ ▓█   ▓██▒░██████▒░ ████▓▒░░▒████▓ ░ ████▓▒░▒██░   ▓██░
+                ░ ▒░   ░  ░░░ ▒░ ░ ░▒   ▒  ▒▒   ▓▒█░░ ▒░▓  ░░ ▒░▒░▒░  ▒▒▓  ▒ ░ ▒░▒░▒░ ░ ▒░   ▒ ▒ 
+                ░  ░      ░ ░ ░  ░  ░   ░   ▒   ▒▒ ░░ ░ ▒  ░  ░ ▒ ▒░  ░ ▒  ▒   ░ ▒ ▒░ ░ ░░   ░ ▒░
+                ░      ░      ░   ░ ░   ░   ░   ▒     ░ ░   ░ ░ ░ ▒   ░ ░  ░ ░ ░ ░ ▒     ░   ░ ░ 
+                    ░      ░  ░      ░       ░  ░    ░  ░    ░ ░     ░        ░ ░           ░ 
+                                                                      ░                           
+            [#] Megalodon v1.0
 
-
+                 "Don't do it like a regular System Admin , with Megalodon do it like a King"
 """)
+    elif screen == 2 :
+        print("""           
+                                                      ░░░░                                                        
+                                                    ░░    ░░                                                      
+                                                    ░░  ░░░░                                                      
+                                                      ░░░░                                                        
+                                                                                                  
+                                          ░░                                                                      
+                                      ░░░░░░░░    ░░  ░░░░  ░░░░░░██████████████  ░░░░    ░░                      
+                                      ░░  ░░      ░░    ░░  ██████▒▒▓▓▒▒▓▓▒▒▓▓██  ░░    ░░                        
+                                        ░░░░      ░░    ░░▓▓▒▒▒▒▓▓▒▒▒▒▓▓████▓▓  ░░░░      ░░                      
+                                            ██████████████▒▒▒▒▒▒▒▒▒▒▒▒██                                          
+                                    ████████▓▓▒▒▒▒▓▓▒▒▓▓▒▒▒▒▒▒▒▒▒▒▒▒██                                            
+                                ████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████                                          
+                            ████▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓████▒▒                                    
+                          ██▓▓▒▒▒▒▒▒▒▒▒▒▓▓██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓████                                
+                        ██▓▓▒▒▒▒▒▒▒▒▒▒▓▓▒▒▓▓██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓████                            
+                      ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██▒▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒████                        
+                    ██▒▒▒▒▒▒▒▒████▒▒▒▒▒▒▓▓██▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓██                      
+                  ██▒▒▒▒▒▒▒▒██░░▒▒▒▒▒▒██▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓██                    
+                  ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██  ████████████████
+                ░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██░░██▒▒▒▒▒▒██▒▒▒▒▒▒▒▒██▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓██▓▓▓▓▓▓▓▓▓▓▓▓▒▒██
+                ██▒▒▒▒▒▒▒▒▒▒██████░░██▒▒░░░░░░██▒▒▒▒▒▒▒▒▒▒██░░▒▒████████████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████  
+                  ██████████░░░░░░██░░▒▒░░░░▒▒░░██▒▒▒▒▒▒▒▒██████                    ████████▒▒▒▒▒▒▒▒▒▒▓▓████      
+                        ██████████▒▒▒▒░░▒▒░░████  ██▒▒▒▒▒▒██                                ██▒▒▒▒▒▒▒▒██          
+                          ██░░░░▒▒░░░░██████        ██▒▒▒▒▒▒██                              ██▒▒▒▒▒▒██            
+                            ████▓▓████                ▓▓██▒▒██                              ██▒▒▒▒██              
+                                                          ████                              ██▒▒▒▒██              
+                                                                                              ██▒▒██              
+                                                                                              ██▒▒██              
+                                                                                                ████              
+            [#] Megalodon v1.0
+                       
+                       "Don't do it like a regular System Admin , with Megalodon do it like a King"              
+""")
+
 command = input("Enter c to continue or q to quit >> ")
 if command == "c":
     os.system("clear")
