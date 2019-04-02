@@ -6,9 +6,9 @@ import subprocess
 # This part collects the current network settings and then places them in a file and displays the contents of the file on the screen
 def shownetworkconf():
     os.system("cd ~")
-    os.system("ifconfig > ~/kraken_files/network/res.txt")
-    os.system("ip route | grep default >> ~/kraken_files/network/res.txt")
-    os.system("cat ~/kraken_files/network/res.txt | less")
+    os.system("ifconfig > ~/megalodon_files/network/res.txt")
+    os.system("ip route | grep default >> ~/megalodon_files/network/res.txt")
+    os.system("cat ~/megalodon_files/network/res.txt | less")
 
 # This part takes the name of the network interface from the user and then opens the window for the network interface settings,
 # and when the settings are finished, restart the network interface to run the settings correctly
