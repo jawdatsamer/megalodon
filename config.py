@@ -36,5 +36,5 @@ Please enter the number here >>"""))
 
 #This part is used to create folders that the program uses to place its files during the execution of certain tasks
 os.system("cd")
-os.system("mkdir ~/kraken_files")
-os.system("mkdir ~/kraken_files/network")
+os.system("mkdir ~/megalodon_files")
+os.system("mkdir ~/megalodon_files/network")
