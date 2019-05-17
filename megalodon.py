@@ -30,6 +30,7 @@ def report():
     servername = subprocess.getoutput("hostname -f")
     user = subprocess.getoutput('whoami')
     userlog = subprocess.getoutput("who")
+    upsince = subprocess.getoutput("uptime -s")
     uptime = subprocess.getoutput("uptime -p")
     memorystate = subprocess.getoutput("free -h")
     diskstate = subprocess.getoutput("df -h") 
@@ -39,13 +40,13 @@ Welcome back to {} server again Mr.{} these is a small report about the system f
 
         __________________________________Report start here__________________________________
 
-the users loged to the system :
+The users loged to the system :
 {}
         _____________________________________________________________________________________
 
-the system up time since :
-{}
-
+The system up time statistics :
+this system has been working since : {}
+this system has been up since : {}
         _____________________________________________________________________________________
 
 The state of memory is :
@@ -57,7 +58,7 @@ The state of Disks space is :
 {}
 
         __________________________________Report Stop here___________________________________
-""".format(servername ,user, userlog, uptime,memorystate,diskstate))
+""".format(servername ,user, userlog, upsince,uptime,memorystate,diskstate))
 
 #report function end here
 
@@ -66,12 +67,15 @@ def networkoptions():
         __________________________________Network configuration and the hostname_____________
 
 What do want to do, please choose from the list :
+Network options :
+    1) Show the network configuration
+    2) Edit the network configuration
+Hostname options :
+    3) show the hostname
+    4) edit the hostname
 
-1) Show the network configuration
-2) Edit the network configuration
-3) show the hostname
-4) edit the hostname
 0) Back to the main menu
+00) Exit
 """)
 
     choseoption = str(input("Enter the number next to your choice to continue >> "))
@@ -86,53 +90,72 @@ What do want to do, please choose from the list :
     elif choseoption == "0":
         os.system("clear")
         options()
-
+    elif choseoption == "00":
+        print ("Goodbye, come back soon ^_^ \n")
+        exit() 
 def usersandgroupoptions():
         print ("""
         __________________________________Configure Users and groups_________________________
 
 what do want to do, please choose from the list :
+Users configuration : 
+    1) show users
+    2) show user information
+    3) add new user (Quick)
+    4) add new user (Custom)
+    5) delete user
+    6) modify user
+Groups configuration :
+    7) show groups
+    9) show group information and members
+    10) add new group
+    11) delete group
+    12) modify group
 
-1) show users
-2) add new user
-3) delete user
-4) modify user
-5) show groups
-6) add new group
-7) delete group
-8) modify group
 0) Back to the main menu
+00) Exit
         """)
         choseoption = str(input("Enter the number next to your choice to continue >> "))
         if choseoption == "1":
-           usersandgroupconf.showusers() 
+           usersandgroupconf.showusers()
         elif choseoption == "2":
-           usersandgroupconf.addusers() 
+            usersandgroupconf.showuserinfo()
         elif choseoption == "3":
-            usersandgroupconf.delusers()
+            usersandgroupconf.addusersquick()
+        elif choseoption == "4":
+           usersandgroupconf.adduserscustom() 
         elif choseoption == "5":
-            usersandgroupconf.showgroups()
+            usersandgroupconf.delusers()
         elif choseoption == "6":
+            usersandgroupconf.moduser()
+        elif choseoption == "":
+            usersandgroupconf.showgroups()
+        elif choseoption == "":
             usersandgroupconf.addgroups()
         elif choseoption == "0":
             os.system("clear")
             options()
-
+        elif choseoption == "00":
+            print ("Goodbye, come back soon ^_^ \n")
+            exit() 
 def servicesoptions():
     print ("""
         __________________________________Services Management________________________________
 
 what do want to do, please choose from the list :
 
-1) Show all services status
-2) Show all running services
-3) Show service status
-4) monitor services by their resource usage
-5) Start a service
-6) Stop a service
-7) Restart a service
-0) Back to the main menu
+Show services and monitor :
+    1) Show all services status
+    2) Show all running services
+    3) Show service status
+    4) monitor services by their resource usage
+Service Control :
+    5) Start a service
+    6) Stop a service
+    7) Restart a service
 
+0) Back to the main menu
+00) Exit
 """)
     choseoption = str(input("Enter the number next to your choice to continue >> "))
     if choseoption == "1" :
@@ -152,7 +175,9 @@ what do want to do, please choose from the list :
     elif choseoption == "0" :
         os.system("clear")
         options()
-
+    elif choseoption == "00":
+        print ("Goodbye, come back soon ^_^ \n")
+        exit() 
 def managepackagesoption():
     print("""
         __________________________________Packages Management________________________________
@@ -183,7 +208,9 @@ RPM package files :
     18) upgrade package
     19) reinstall package
     20) uninstall package
+
 0) Back to the main menu
+00) Exit
 """)
     choseoption = str(input("Enter the number next to your choice to continue >> "))
     if choseoption == "1":
@@ -229,6 +256,39 @@ RPM package files :
     elif choseoption == "0" :
         os.system("clear")
         options()
+    elif choseoption == "00":
+        print ("Goodbye, come back soon ^_^ \n")
+        exit() 
+def backupoptions():
+    print("""
+        __________________________________Backup Tool________________________________________
+
+what do want to do, please choose from the list :
+
+Backup options :
+    1) Backup user home directory
+    2) Backup home directory for all users
+    3) BackUp linux system configuration files
+    4) Backup logs
+    6) Backup all the system
+Restore options :
+    7) Restore user home directory from backup
+    8) Restore all user home directory from backup
+    8) Restore linux system configuration files from backup
+    9) Restore logs from backup
+    10) Restore all the system from backup
+0) Back to the main menu
+00) Exit
+""")
+    choseoption = str(input("Enter the number next to your choice to continue >> "))
+    if choseoption == "1":
+        backuptool.backupuser()
+    elif choseoption == "0":
+        os.system("clear")
+        options()
+    elif choseoption == "00":
+        print ("Goodbye, come back soon ^_^ \n")
+        exit()    
 #options function start here
 #This part of the code is used to display the options provided by the program to customize the system in the form of options chosen by the user, and according to the choice is directed to the user to function appropriate to implement its option
 def options():
@@ -241,9 +301,12 @@ What do you want to do today , please choose from the list :
 2) Configure Users and groups
 3) Services Management
 4) Packages Management
-5) Backup tool
+5) Backup and Restore
 6) show a small report about the system
 0) Exit
+
+WARNING : These tool not compatible with Ubuntu server and Debian and if you try to use them within these systems, it will be at your own risk , don't be sad we will support them in the future
+
 """)
     choseoption = str(input("Enter the number next to your choice to continue >> "))
     if choseoption == "1" :
@@ -259,7 +322,8 @@ What do you want to do today , please choose from the list :
         os.system("clear")
         managepackagesoption()
     elif choseoption == "5":
-        print ("Not programmed yet !!")
+        os.system("clear")
+        backupoptions()
     elif choseoption == "6":
         os.system("clear")
         report()
