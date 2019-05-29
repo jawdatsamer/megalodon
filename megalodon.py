@@ -110,7 +110,6 @@ Groups configuration :
     9) show group information and members
     10) add new group
     11) delete group
-    12) modify group
 
 0) Back to the main menu
 00) Exit
@@ -128,10 +127,12 @@ Groups configuration :
             usersandgroupconf.delusers()
         elif choseoption == "6":
             usersandgroupconf.moduser()
-        elif choseoption == "":
+        elif choseoption == "7":
             usersandgroupconf.showgroups()
-        elif choseoption == "":
+        elif choseoption == "8":
             usersandgroupconf.addgroups()
+        elif choseoption == "9":
+            userandgroupconf.removegroups()
         elif choseoption == "0":
             os.system("clear")
             options()
@@ -301,8 +302,7 @@ What do you want to do today , please choose from the list :
 2) Configure Users and groups
 3) Services Management
 4) Packages Management
-5) Backup and Restore
-6) show a small report about the system
+5) show a small report about the system
 0) Exit
 
 WARNING : These tool not compatible with Ubuntu server and Debian and if you try to use them within these systems, it will be at your own risk , don't be sad we will support them in the future
@@ -322,9 +322,6 @@ WARNING : These tool not compatible with Ubuntu server and Debian and if you try
         os.system("clear")
         managepackagesoption()
     elif choseoption == "5":
-        os.system("clear")
-        backupoptions()
-    elif choseoption == "6":
         os.system("clear")
         report()
         command = input("Enter c to go to the main menu >> ")
