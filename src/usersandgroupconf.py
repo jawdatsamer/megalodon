@@ -140,11 +140,11 @@ def showgroups():
 
 def addgroups():
     newgroup = str(input("Enter the new group name :"))
-    os.system("groupadd {}".format(newgroup))
+    os.system("sudo groupadd {}".format(newgroup))
 
 def removegroups():
     groupname = str(input("Enter the group name :"))
-    os.system("sudo -f {}".format(groupname))
+    os.system("sudo groupdel -f {}".format(groupname))
 
 def modifygroup():
     groupname = str(input("Enter group name :"))
