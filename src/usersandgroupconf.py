@@ -147,5 +147,21 @@ def removegroups():
     os.system("sudo groupdel -f {}".format(groupname))
 
 def modifygroup():
-    groupname = str(input("Enter group name :"))
-    
+    os.system("clear")
+    print("""
+        __________________________________Modify Group________________________________________
+
+Select the desired edit from the list :
+    1) Change the group name
+    2) Change the group ID
+""")
+    chooseoption = str(input("Enter the number next to your choice to continue >> "))
+    if chooseoption == "1":
+        groupname = str(input("Enter the group name :"))
+        newgroupname = str(input("Enter the group new name :"))
+        os.system("sudo groupmod -n {} {}".format(newgroupname,groupname))
+    if chooseoption == "2":
+        groupname = str(input("Enter the group name :"))
+        newgroupid = str(input("Enter the group new ID :"))
+        os.system("sudo groupmod -g {} {}".format(newgroupid,groupname))        
+
