@@ -66,7 +66,7 @@ def networkoptions():
     print ("""
         __________________________________Network configuration and the hostname_____________
 
-What do want to do, please choose from the list :
+What do you want to do, please choose from the list :
 Network options :
     1) Show the network configuration
     2) Edit the network configuration
@@ -97,7 +97,7 @@ def usersandgroupoptions():
         print ("""
         __________________________________Configure Users and groups_________________________
 
-what do want to do, please choose from the list :
+what do you want to do, please choose from the list :
 Users configuration : 
     1) show users
     2) show user information
@@ -107,9 +107,9 @@ Users configuration :
     6) modify user
 Groups configuration :
     7) show groups
-    9) show group information and members
-    10) add new group
-    11) delete group
+    8) add new group
+    9) delete group
+    10) modify group 
 
 0) Back to the main menu
 00) Exit
@@ -132,18 +132,21 @@ Groups configuration :
         elif choseoption == "8":
             usersandgroupconf.addgroups()
         elif choseoption == "9":
-            userandgroupconf.removegroups()
+            usersandgroupconf.removegroups()
+        elif choseoption == "10":
+            usersandgroupconf.modifygroup()
         elif choseoption == "0":
             os.system("clear")
             options()
         elif choseoption == "00":
             print ("Goodbye, come back soon ^_^ \n")
             exit() 
+
 def servicesoptions():
     print ("""
         __________________________________Services Management________________________________
 
-what do want to do, please choose from the list :
+what do you want to do, please choose from the list :
 
 Show services and monitor :
     1) Show all services status
@@ -183,7 +186,7 @@ def managepackagesoption():
     print("""
         __________________________________Packages Management________________________________
 
-what do want to do, please choose from the list :
+what do you want to do, please choose from the list :
 
 Show packages :
     1) List all packages installed, available and update
@@ -264,7 +267,7 @@ def backupoptions():
     print("""
         __________________________________Backup Tool________________________________________
 
-what do want to do, please choose from the list :
+what do you want to do, please choose from the list :
 
 Backup options :
     1) Backup user home directory
