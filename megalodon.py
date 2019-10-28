@@ -271,13 +271,13 @@ what do you want to do, please choose from the list :
 
 Backup options :
     1) Backup user home directory
-    2) Backup home directory for all users
-    3) BackUp linux system configuration files
+    2) Backup home directory for all users (Not working yet!)
+    3) Backup linux system configuration files
     4) Backup logs
-    6) Backup all the system
+    5) Backup all the system
 Restore options :
-    7) Restore user home directory from backup
-    8) Restore all user home directory from backup
+    6) Restore user home directory from backup
+    7) Restore all user home directory from backup (Not working yet!)
     8) Restore linux system configuration files from backup
     9) Restore logs from backup
     10) Restore all the system from backup
@@ -287,6 +287,16 @@ Restore options :
     choseoption = str(input("Enter the number next to your choice to continue >> "))
     if choseoption == "1":
         backuptool.backupuser()
+#    elif choseoption == "2":
+#        backuptool.backup_all_users()
+    elif choseoption == "3":
+        backuptool.backupconffiles()
+    elif choseoption == "4":
+        backuptool.backuplogs()
+    elif choseoption == "5":
+        backuptool.fullbackup()
+    elif choseoption == "6":
+        backuptool.restoreuserfiles()
     elif choseoption == "0":
         os.system("clear")
         options()
@@ -305,7 +315,8 @@ What do you want to do today , please choose from the list :
 2) Configure Users and groups
 3) Services Management
 4) Packages Management
-5) show a small report about the system
+5) Backup Options
+6) show a small report about the system
 0) Exit
 
 WARNING : These tool not compatible with Ubuntu server and Debian and if you try to use them within these systems, it will be at your own risk , don't be sad we will support them in the future
@@ -323,8 +334,10 @@ WARNING : These tool not compatible with Ubuntu server and Debian and if you try
         servicesoptions()
     elif choseoption == "4":
         os.system("clear")
-        managepackagesoption()
     elif choseoption == "5":
+        os.system("clear")
+        backupoptions()
+    elif choseoption == "6":
         os.system("clear")
         report()
         command = input("Enter c to go to the main menu >> ")
@@ -337,7 +350,7 @@ WARNING : These tool not compatible with Ubuntu server and Debian and if you try
 #options function end here
 
 #user part start here
-#This part of the code is used to execute the appropriate functions for the user when starting the program
+#This part of the code is usedc to execute the appropriate functions for the user when starting the program
 
 os.system("clear")
 
@@ -390,7 +403,7 @@ for x in range(1):
                                                                                               ██▒▒██              
                                                                                               ██▒▒██              
                                                                                                 ████              
-            [#] Megalodon v1.0
+            [#] Megalodon v1.2
                        
                        "Don't do it like a regular System Admin , with Megalodon do it like a King"              
 """)
