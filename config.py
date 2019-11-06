@@ -9,6 +9,13 @@ if 'NAME="CentOS Linux"' in open("/etc/os-release").read() or 'NAME=CentOS Linux
     os.system("sudo yum install -y https://centos7.iuscommunity.org/ius-release.rpm")
     os.system("sudo yum update")
     os.system("sudo yum install -y python36u python36u-libs python36u-devel python36u-pip")
+    os.system("sudo mkdir ~/megalodon_files")
+    os.system("sudo mkdir ~/megalodon_files/backup_files/")
+    os.system("sudo mkdir ~/megalodon_files/backup_files/users_backup/")
+    os.system("sudo mkdir ~/megalodon_files/backup_files/all_users_backup/")
+    os.system("sudo mkdir ~/megalodon_files/backup_files/conf_backup/")
+    os.system("sudo mkdir ~/megalodon_files/backup_files/logs_backup/")
+    os.system("sudo mkdir ~/megalodon_files/backup_files/full_system_backup/")
 
 elif 'NAME="Ubuntu"' in open("/etc/os-release").read() or 'NAME=Ubuntu' in open("/etc/os-release").read():
     os.system("sudo apt-get update")
@@ -19,6 +26,10 @@ elif 'NAME="Red Hat Enterprise Linux Server"' in open("/etc/os-release").read() 
     os.system("sudo yum install NetworkManager-tui")    
     os.system("sudo yum install centos-release-scl")
     os.system("sudo yum install rh-python36")
+    os.system("sudo mkdir ~/megalodon_files")
+    os.system("sudo mkdir ~/megalodon_files/backup_files/")
+    os.system("sudo mkdir ~/megalodon_files/backup_files/users_backup/")
+    os.system("sudo mkdir ~/megalodon_files/backup_files/all_users_backup/")
 else:
     print ("Sorry, we could not detect your operating system, please enter the operating system name manually !!")
     os_name = str(input("""whats is your OS name choose from the list :
