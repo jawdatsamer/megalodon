@@ -323,30 +323,39 @@ WARNING : These tool not compatible with Ubuntu server and Debian and if you try
 
 """)
     choseoption = str(input("Enter the number next to your choice to continue >> "))
-    if choseoption == "1" :
-        os.system("clear")
-        networkoptions()
-    elif choseoption == "2":
-        os.system("clear")
-        usersandgroupoptions()
-    elif choseoption == "3":
-        os.system("clear")
-        servicesoptions()
-    elif choseoption == "4":
-        os.system("clear")
-    elif choseoption == "5":
-        os.system("clear")
-        backupoptions()
-    elif choseoption == "6":
-        os.system("clear")
-        report()
-        command = input("Enter c to go to the main menu >> ")
-        if command == "c":
-            os.system("clear")
-            options()
-    elif choseoption == "0":
+    if choseoption == "1" or choseoption == "2" or choseoption == "3" or choseoption == "4" or choseoption == "5" or choseoption == "6":
+        tracker = int(choseoption)
+        while tracker != 0:
+            if choseoption == "1" :
+                os.system("clear")
+                networkoptions()
+            elif choseoption == "2":
+                os.system("clear")
+                usersandgroupoptions()
+            elif choseoption == "3":
+                os.system("clear")
+                servicesoptions()
+            elif choseoption == "4":
+                os.system("clear")
+                managepackagesoption()
+            elif choseoption == "5":
+                os.system("clear")
+                backupoptions()
+            elif choseoption == "6":
+                os.system("clear")
+                report()
+                command = input("Enter c to go to the main menu >> ")
+                if command == "c" or command == "":
+                    os.system("clear")
+                    options()
+            elif choseoption == "0":
+                break
+    elif choseoption == "":
+        print ("Wrong choose ! we are going to close -_-")
+    else:
+        print ("Wrong choose ! we are going to close -_-")
+    if choseoption == "0":
         print ("Goodbye, come back soon ^_^ \n")
-        exit()    
 #options function end here
 
 #user part start here
@@ -403,13 +412,13 @@ for x in range(1):
                                                                                               ██▒▒██              
                                                                                               ██▒▒██              
                                                                                                 ████              
-            [#] Megalodon v1.2
+            [#] Megalodon v1.2 come to you by Jawdat Samer
                        
                        "Don't do it like a regular System Admin , with Megalodon do it like a King"              
 """)
 
 command = input("Enter c to continue or q to quit >> ")
-if command == "c":
+if command == "c" or command == "":
     os.system("clear")
     options()
 elif command == "q":
