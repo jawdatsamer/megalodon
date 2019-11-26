@@ -57,4 +57,20 @@ def restoreuserfiles():
     username = str(input("Enter user name :"))
     userfilespath = "/home/{}/".format(username)
     os.system("sudo tar -xf {} {}".format(backupfolder,userfilespath))
-    
+
+def restoreconffiles():
+    backupfolder = str(input("Please enter the path for your backup file :"))
+    conffiles = "/etc/"
+    os.system("sudo tar -xf {} {}".format(backupfolder,conffiles))
+
+def restorelogs():
+    backupfolder = str(input("Please enter the path for your backup file :"))
+    logsfiles = "/var/log/"
+    os.system("sudo tar -xf {} {}".format(backupfolder,logsfiles))
+
+# Danger part !!
+def restorefullbackup():
+    print ("Warning These is a danger process, be carefull !!")
+    backupfolder = str(input("Please enter the path for your backup file :"))
+    rootpath = "/"
+    os.system("sudo tar -xf {} {}".format(backupfolder,rootpath))
