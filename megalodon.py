@@ -5,7 +5,7 @@
 # Author : Jawdat Samer                                                                                                  #
 # Email : jawdat.samer@protonmail.com                                                                                    #
 # License with GNU GPLv3 or any later version of these license                                                           #
-# Version : 1.0                                                                                                          #
+# Version : 1.3                                                                                                          #
 # Tested in : CentOS 7, RHEL 7                                                                                #
 # Developed using : Fedora 29 , Visual Studio Code and VMware Workstation                                                #
 #                                                                                                                        #
@@ -36,7 +36,7 @@ def report():
     diskstate = subprocess.getoutput("df -h") 
     print ("""
 
-Welcome back to {} server again Mr.{} these is a small report about the system for you :
+Welcome back to {} server again Mr/Ms.{} these is a small report about the system for you :
 
         __________________________________Report start here__________________________________
 
@@ -287,8 +287,8 @@ Restore options :
     choseoption = str(input("Enter the number next to your choice to continue >> "))
     if choseoption == "1":
         backuptool.backupuser()
-#    elif choseoption == "2":
-#        backuptool.backup_all_users()
+    elif choseoption == "2":
+        backuptool.backup_all_users()
     elif choseoption == "3":
         backuptool.backupconffiles()
     elif choseoption == "4":
@@ -297,6 +297,14 @@ Restore options :
         backuptool.fullbackup()
     elif choseoption == "6":
         backuptool.restoreuserfiles()
+    elif choseoption == "7":
+        backuptool.restorealluser()
+    elif choseoption == "8":
+        backuptool.restoreconffiles()
+    elif choseoption == "9":
+        backuptool.restorelogs()
+    elif choseoption == "10":
+        backuptool.restorefullbackup()
     elif choseoption == "0":
         os.system("clear")
         options()
@@ -352,6 +360,9 @@ WARNING : These tool not compatible with Ubuntu server and Debian and if you try
                 break
     elif choseoption == "":
         print ("Wrong choose ! we are going to close -_-")
+    elif choseoption == "0":
+        print ("Goodbye, come back soon ^_^ \n")
+        exit()
     else:
         print ("Wrong choose ! we are going to close -_-")
     if choseoption == "0":
@@ -377,7 +388,7 @@ for x in range(1):
                 ░      ░      ░   ░ ░   ░   ░   ▒     ░ ░   ░ ░ ░ ▒   ░ ░  ░ ░ ░ ░ ▒     ░   ░ ░ 
                     ░      ░  ░      ░       ░  ░    ░  ░    ░ ░     ░        ░ ░           ░ 
                                                                       ░                           
-            [#] Megalodon v1.0
+            [#] Megalodon v1.3 come to you by Jawdat Samer
 
                  "Don't do it like a regular System Admin , with Megalodon do it like a King"
 """)
@@ -412,7 +423,7 @@ for x in range(1):
                                                                                               ██▒▒██              
                                                                                               ██▒▒██              
                                                                                                 ████              
-            [#] Megalodon v1.2 come to you by Jawdat Samer
+            [#] Megalodon v1.3 come to you by Jawdat Samer
                        
                        "Don't do it like a regular System Admin , with Megalodon do it like a King"              
 """)
